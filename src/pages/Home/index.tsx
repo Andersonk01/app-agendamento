@@ -3,6 +3,7 @@ import Box from "../../components/Box";
 import ModalContent from "../../components/ModalContent";
 import { ServiceComponent } from "../../components/ServiceConponent";
 import { DesignerComponent } from "../../components/DesignerComponent";
+import { TimeTable } from "../../components/TimeTable";
 
 import { Profile } from "../../components/Profile";
 import {
@@ -14,7 +15,6 @@ import {
   Modal,
 } from "react-native";
 import { useState } from "react";
-
 type Homeprops = {
   children?: React.ReactNode;
 };
@@ -26,7 +26,7 @@ export function Home({ children }: Homeprops) {
 
   return (
     <View style={styles.container}>
-      {/* <StatusBar style="auto" /> */}
+      <StatusBar style="auto" />
 
       {/* Parte Superior */}
       <View style={styles.containerTop}>
@@ -134,6 +134,7 @@ export function Home({ children }: Homeprops) {
       </Modal>
 
       {/* //* MODAL DATA AND HOURS */}
+      {/*//! focar no calendar  / consertar erros de tipagem (source and sourceId) */}
       <Modal
         visible={openDataHour}
         transparent={true}
@@ -150,7 +151,7 @@ export function Home({ children }: Homeprops) {
           onPressBack={() => setOpenDataHour(false)}
           onPress={() => setOpenDataHour(false)}
         >
-          <Text>Anderson</Text>
+          <TimeTable />
         </ModalContent>
       </Modal>
 

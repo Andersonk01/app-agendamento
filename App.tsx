@@ -3,16 +3,11 @@ import { StyleSheet, View, Text, SafeAreaView } from "react-native";
 import { Routes } from "./src/routes";
 
 // TODO: create a modal for Data and Hours
-{
-  /* <Home>
-        <Text>anderson</Text>
-      </Home> */
-}
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Routes></Routes>
+      <Routes />
     </View>
   );
 }

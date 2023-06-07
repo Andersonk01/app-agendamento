@@ -17,4 +17,8 @@ export const Designer: TypeDesigner[] = [
     id: 4,
     name: "Santos",
   },
+  {
+    id: 5,
+    name: "Anderson kauer",
+  },
 ];

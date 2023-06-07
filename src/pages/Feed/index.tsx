@@ -1,53 +1,73 @@
 import {
   StyleSheet,
   Text,
-  View,
+  FlatList,
   Image,
-  ImageSourcePropType,
+  View,
+  ListRenderItemInfo,
 } from "react-native";
 import React from "react";
+import { FeedContainer } from "./styled";
+import { CardFeed, CardFeedProps } from "./components/Card";
+import { FeedData } from "./image/Data";
+import { BannerFeed } from "./components/Banner";
 
-import { getSelectedImageUri } from "../Setting/components/SettImage";
-import { useState, useEffect } from "react";
+// const NextPage = () => {
+//   // const [image, setImage] = useState(null);
+//   // setImage(getSelectedImageUri());
+//   const [image, setImage] = useState<string | null>(null);
+//   const imageUri = getSelectedImageUri();
 
-export const NextPage = () => {
-  // const [image, setImage] = useState(null);
-  // setImage(getSelectedImageUri());
-  const [image, setImage] = useState<string | null>(null);
+//   useEffect(() => {
+//     setImage(imageUri);
+//   }, [imageUri]);
 
-  const imageUri = getSelectedImageUri();
+//   // Verifica se há uma URI válida antes de renderizar a imagem
+//   if (!imageUri) {
+//     return <Text>Nenhuma imagem selecionada.</Text>;
+//   }
 
-  useEffect(() => {
-    setImage(imageUri);
-  }, [imageUri]);
+//   return (
+//     <Image source={{ uri: image ?? "" }} style={{ width: 300, height: 300 }} />
+//   );
+// };
 
-  // Verifica se há uma URI válida antes de renderizar a imagem
-  if (!imageUri) {
-    return <Text>Nenhuma imagem selecionada.</Text>;
+const ItemSeparator = () => <View style={styles.itemSeparator} />;
+
+export const FeedPage = () => {
+  function renderItem({ item }: ListRenderItemInfo<CardFeedProps>) {
+    return (
+      <>
+        <CardFeed {...item} src={item.src} />
+        {/* <Image source={item.src} /> */}
+      </>
+    );
   }
 
   return (
-    <Image source={{ uri: image ?? "" }} style={{ width: 300, height: 300 }} />
-  );
-};
-
-export const FeedPage = () => {
-  return (
-    <View style={styles.container}>
-      <Text>Feed</Text>
-      <NextPage></NextPage>
-    </View>
+    <FeedContainer>
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        style={styles.flatList}
+        ListHeaderComponent={BannerFeed}
+        data={FeedData}
+        numColumns={2}
+        ItemSeparatorComponent={ItemSeparator}
+        renderItem={renderItem}
+        // contentContainerStyle={styles.contentContainer}
+      />
+    </FeedContainer>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  flatList: {
     flex: 1,
-    height: 100,
-    width: "100%",
-    backgroundColor: "#ccc",
-    color: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    padding: 10,
+  },
+
+  itemSeparator: {
+    height: 5,
+    backgroundColor: "transparent",
   },
 });

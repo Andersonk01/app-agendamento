@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { WrapperModal } from "./styles";
 
@@ -31,7 +31,6 @@ const style = StyleSheet.create({
   buttonVoltar: {
     height: 50,
     width: 80,
-    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     position: "absolute",
