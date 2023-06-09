@@ -60,4 +60,30 @@ O TimeWise é um aplicativo de agendamento desenvolvido para facilitar o process
 ### **Tecnologias Utilizadas**
 
 - Linguagem de Programação: TypeScript
-- Framework: React Nati
+- Framework: React Native
+- Armazenamento de Dados: Firebase - AsyncStorage `// Falta implementar Firebase`
+- Autenticação de Usuário: Firebase Authentication `// Falta implementar`
+- Envio de Notificações: Firebase Cloud Messaging `// Falta implementar`
+
+### \***\*Fluxo de Uso\*\***
+
+1. O usuário acessa o aplicativo TimeWise.
+2. O usuário cria uma conta ou faz login com suas credenciais.
+3. O usuário navega pelos serviços oferecidos, visualiza a disponibilidade de horários e escolhe um serviço, horário e funcionário.
+4. O usuário confirma o agendamento e recebe uma notificação de confirmação.
+5. O proprietário do salão de beleza recebe uma notificação sobre o novo agendamento e pode visualizá-lo na interface administrativa.
+6. O proprietário pode gerenciar os agendamentos, editar detalhes, confirmar ou rejeitar solicitações de agendamento.
+
+### \***\*Instalação e Configuração\*\***
+
+Estará disponível tanto nas plataformas de IOS quanto Android em suas respectivas lojas de aplicativo. Sem a necessidade de baixar pacotes terceiros, a configuracao se dará por meio do proprio aplicativo, de modo intuitivo.
+
+### \***\*Considerações de Segurança\*\***
+
+- A segurança dos dados dos clientes é uma prioridade. Ultilizamos práticas seguras de armazenamento e transmissão de dados.
+- Autenticação de usuário robusta para garantir que apenas usuários autorizados possam acessar as funcionalidades do aplicativo. `// in process of auth with JWT`
+- Privacidade dos clientes tratada da melhor forma possivel. `// Termos e Privacidade in process`
+
+### \***\*Conclusão\*\***
+
+Esta documentação fornece uma visão geral das funcionalidades e tecnologias utilizadas no aplicativo “TimeWise”
