@@ -54,7 +54,6 @@ export const FeedPage = () => {
         numColumns={2}
         ItemSeparatorComponent={ItemSeparator}
         renderItem={renderItem}
-        // contentContainerStyle={styles.contentContainer}
       />
     </FeedContainer>
   );
@@ -63,7 +62,7 @@ export const FeedPage = () => {
 const styles = StyleSheet.create({
   flatList: {
     flex: 1,
-    padding: 10,
+    padding: 6,
   },
 
   itemSeparator: {

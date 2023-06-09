@@ -14,18 +14,11 @@ export function Routes() {
     <NavigationContainer>
       <TabBar.Navigator
         screenOptions={{
-          tabBarActiveTintColor: "#f39b8b", //* compartilha com todos os 'filhos' q reaproveitam
-          tabBarInactiveTintColor: "#ddaba2", //* quando nao estiver selecionado
+          //* compartilha com todos os 'filhos' q reaproveitam
+          tabBarActiveTintColor: "#f39b8b",
+          //* quando nao estiver selecionado
+          tabBarInactiveTintColor: "#ddaba2",
           tabBarShowLabel: true,
-          // tabBarStyle: {
-          //   backgroundColor: "green",
-          // },
-          // tabBarStyle: {
-          //   flex: 1,
-          //   backgroundColor: "red",
-          //   borderWidth: 0,
-          //   elevation: 1,
-          // },
         }}
       >
         <TabBar.Screen

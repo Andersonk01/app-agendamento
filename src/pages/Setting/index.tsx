@@ -88,7 +88,7 @@ export const SettingPage = () => {
                 <Text>Escolha uma imagem</Text>
               )}
               <ButtonPlus onPress={pickImage}>
-                <Ionicons name="add" size={60} color={"#f39"} />
+                <Ionicons name="add" size={60} color={"#353535"} />
               </ButtonPlus>
             </View>
           </>
@@ -99,14 +99,16 @@ export const SettingPage = () => {
               <Image source={{ uri: image }} style={s.touchuri}></Image>
             </View>
             <ButtonPlus onPress={pickImage}>
-              <Ionicons name="add" size={70} color={"#f39"} />
+              <Ionicons name="add" size={70} color={"#353535"} />
             </ButtonPlus>
             {/* <Button title="Apagar imagem" /> */}
           </View>
         )}
         <TitleDescription
-          title="Anderson Kauer"
-          description="Front End Developer"
+          title="BeautyTime"
+          description={
+            "Onde o cuidado se transforma em uma\nexperiência única!"
+          }
         />
       </View>
       <View style={s.containerBottom}>

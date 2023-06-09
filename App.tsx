@@ -1,14 +1,21 @@
-import { Home } from "./src/pages/Home";
-import { StyleSheet, View, Text, SafeAreaView } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, View, Text } from "react-native";
 import { Routes } from "./src/routes";
 
-// TODO: create a modal for Data and Hours
+import { ThemeProvider } from "styled-components";
+
+import theme from "./src/components/theme";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Routes />
-    </View>
+    <>
+      <StatusBar style="auto" />
+      <ThemeProvider theme={theme.light}>
+        <View style={styles.container}>
+          <Routes />
+        </View>
+      </ThemeProvider>
+    </>
   );
 }
 
@@ -17,37 +24,5 @@ const styles = StyleSheet.create({
     flex: 1,
     position: "relative",
     backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-  box: {
-    flex: 1,
-    position: "absolute",
-    bottom: 100,
-    width: "100%",
-    backgroundColor: "transparent",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  containerTop: {
-    flex: 2,
-    width: "100%",
-    backgroundColor: "#fbbbbb",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  containerBottom: {
-    flex: 1,
-    width: "100%",
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  imgs: {
-    flex: 1,
-    width: "100%",
-  },
-  vazia: {
-    flex: 1,
   },
 });

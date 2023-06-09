@@ -12,7 +12,11 @@ type ModalContentProps = {
   onPressBack?: () => void | undefined;
 };
 
-function ModalContent({ children, onPress, onPressBack }: ModalContentProps) {
+export function ModalContent({
+  children,
+  onPress,
+  onPressBack,
+}: ModalContentProps) {
   return (
     <WrapperModal>
       {children}
@@ -25,7 +29,6 @@ function ModalContent({ children, onPress, onPressBack }: ModalContentProps) {
     </WrapperModal>
   );
 }
-export default ModalContent;
 
 const style = StyleSheet.create({
   buttonVoltar: {

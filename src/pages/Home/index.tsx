@@ -1,84 +1,46 @@
-import { StatusBar, setStatusBarTranslucent } from "expo-status-bar";
-import Box from "../../components/Box";
-import ModalContent from "../../components/ModalContent";
+import { Box } from "../../components/Box";
+
+import { ModalContent } from "../../components/ModalContent";
 import { ServiceComponent } from "../../components/ServiceConponent";
 import { DesignerComponent } from "../../components/DesignerComponent";
 import { TimeTable } from "../../components/TimeTable";
 
-import { Profile } from "../../components/Profile";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  Modal,
-} from "react-native";
-import { useState } from "react";
-type Homeprops = {
-  children?: React.ReactNode;
-};
+import * as S from "./styled";
 
-export function Home({ children }: Homeprops) {
+import { Profile } from "../../components/Profile";
+import { StyleSheet, View, Image, TouchableOpacity, Modal } from "react-native";
+import { useState } from "react";
+
+export function Home() {
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [openDesigner, setOpenDesigner] = useState<boolean>(false);
   const [openDataHour, setOpenDataHour] = useState<boolean>(false);
 
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
-
       {/* Parte Superior */}
-      <View style={styles.containerTop}>
+      <S.ContainerTop>
         <Profile />
-      </View>
+      </S.ContainerTop>
 
       {/* Parte Inferior */}
-      <View style={styles.containerBottom}>
+      <S.ContainerBottom>
         <View style={styles.box}>
           <TouchableOpacity
             style={{ flex: 1 }}
             onPressOut={() => setOpenModal(true)}
           >
-            <Box name="Serviços">
+            <Box name="Agendamento">
               <Image
-                style={s.imagem}
+                style={styles.image}
                 source={require("../../components/Box/assets/services100.png")}
                 resizeMode="contain"
               />
             </Box>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            style={{ flex: 1 }}
-            onPressOut={() => setOpenDesigner(true)}
-          >
-            <Box name="Designer">
-              <Image
-                style={s.imagem}
-                source={require("../../components/Box/assets/users.png")}
-                resizeMode="contain"
-              />
-            </Box>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={{ flex: 1 }}
-            onPressOut={() => setOpenDataHour(true)}
-          >
-            <Box name="Data e Hora">
-              <Image
-                style={s.imagem}
-                source={require("../../components/Box/assets/calendar.png")}
-                resizeMode="contain"
-              />
-            </Box>
-          </TouchableOpacity>
         </View>
-      </View>
-
+      </S.ContainerBottom>
       {/* //*  Modal start */}
-      {children}
       {/* //* MODAL SERVICE */}
       <Modal
         visible={openModal}
@@ -118,6 +80,7 @@ export function Home({ children }: Homeprops) {
           justifyContent: "flex-end",
         }}
       >
+        {/* part de cima do modal - transparent */}
         <View style={styles.vazia}></View>
 
         <ModalContent
@@ -134,7 +97,7 @@ export function Home({ children }: Homeprops) {
       </Modal>
 
       {/* //* MODAL DATA AND HOURS */}
-      {/*//! focar no calendar  / consertar erros de tipagem (source and sourceId) */}
+
       <Modal
         visible={openDataHour}
         transparent={true}
@@ -159,22 +122,10 @@ export function Home({ children }: Homeprops) {
     </View>
   );
 }
-const s = StyleSheet.create({
-  imagem: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100%",
-    width: 50,
-  },
-});
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
   box: {
     flex: 1,
@@ -185,19 +136,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  containerTop: {
-    flex: 2,
-    width: "100%",
-    backgroundColor: "#fbbbbb",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  containerBottom: {
+  image: {
     flex: 1,
-    width: "100%",
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    height: "100%",
+    width: 50,
   },
   imgs: {
     flex: 1,

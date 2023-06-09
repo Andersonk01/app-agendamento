@@ -6,7 +6,7 @@ type ButtonProps = {
 };
 
 export const ButtonContainer = styled(TouchableOpacity)<ButtonProps>`
-  background-color: #faa2a1;
+  background-color: ${({ theme }) => theme.colors.primary_100};
   height: 50px;
   width: 80%;
   margin-bottom: 10px;
@@ -17,6 +17,7 @@ export const ButtonContainer = styled(TouchableOpacity)<ButtonProps>`
   border: 1px solid #f39;
 `;
 export const ButtonText = styled(Text)`
-  font-size: 24px;
-  color: #666;
+  font-size: 32px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.text_100};
 `;

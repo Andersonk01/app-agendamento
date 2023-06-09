@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Calendar, LocaleConfig } from "react-native-calendars";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export const TimeTable = () => {
   const [selected, setSelected] = useState("");
@@ -51,7 +51,7 @@ export const TimeTable = () => {
       "Sexta-feira",
       "Sábado",
     ],
-    dayNamesShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+    dayNamesShort: ["D", "S", "T", "Q", "Q", "S", "S"],
     today: "Hoje",
   };
   LocaleConfig.defaultLocale = "pt-br";
@@ -67,13 +67,11 @@ export const TimeTable = () => {
           theme={{
             textDayFontWeight: "bold",
             textDayHeaderFontSize: 24,
-            textDayFontSize: 24, // Fonte dos números
+            textDayFontSize: 18, // Fonte dos números
           }}
         />
       </View>
-      <View style={styles.calendarText}>
-        <Text>Anderson</Text>
-      </View>
+      <View style={styles.calendarText}></View>
     </>
   );
 };
@@ -82,7 +80,6 @@ const styles = StyleSheet.create({
     flex: 3,
     width: "100%",
     border: 0,
-    // backgroundColor: "red",
     alignItems: "center",
     justifyContent: "center",
     padding: 0,
@@ -93,7 +90,6 @@ const styles = StyleSheet.create({
     maxwidth: 550,
     height: "100%",
     border: 0,
-    // backgroundColor: "aqua",
     marginLeft: 0,
     marginRight: 0,
   },

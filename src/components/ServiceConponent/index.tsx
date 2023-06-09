@@ -1,19 +1,11 @@
 import {
-  Text,
-  View,
   StyleSheet,
-  TouchableOpacity,
   FlatList,
 } from "react-native";
 import React from "react";
 import { Services } from "../../const/Services";
 
 import * as S from "./styled";
-
-// type ServiceComponentProps = {
-//   id: number;
-//   name: string;
-// };
 
 export function ServiceComponent() {
   return (
@@ -28,13 +20,6 @@ export function ServiceComponent() {
         </S.BoxService>
       )}
     />
-
-    //  {Services.map((item) => (
-    //   <View style={styles.BoxServ} key={item.id}>
-    //     <Text style={styles.Texto}>{item.name}</Text>
-    //     <Text style={styles.Preco}>R$ {item.price}</Text>
-    //   </View>
-    // ))}
   );
 }
 
@@ -44,6 +29,3 @@ const styles = StyleSheet.create({
     width: "80%",
   },
 });
-
-// children?: React.ReactNode;
-// onPress?: () => void | undefined;

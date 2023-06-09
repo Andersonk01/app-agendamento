@@ -12,7 +12,7 @@ export const ButtonPlus = styled(TouchableOpacity)<ButtonProps>`
   width: 80px;
   height: 80px;
   border-radius: 50px;
-  background-color: #fbbbbb;
+  background-color: ${({ theme }) => theme.colors.accent_100};
   justify-content: center;
   align-items: center;
 `;

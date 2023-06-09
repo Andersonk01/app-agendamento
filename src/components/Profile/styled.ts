@@ -1,20 +1,19 @@
-import { View, Text } from "react-native";
 import styled from "styled-components";
 
-export const Wrapper = styled(View)`
-  /* background-color: transparent; */
+import { View, Text } from "react-native";
 
+export const Wrapper = styled(View)`
   width: 100%;
-  height: 80px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 `;
 
-export const Title = styled(Text)`
+export const TitleText = styled(Text)`
   color: ${({ theme }) => theme.colors.text_100};
   font-size: 42px;
+  /* font-style: italic; */
 `;
-export const Description = styled(Text)`
+export const DescriptionText = styled(Text)`
   color: ${({ theme }) => theme.colors.text_100};
   font-size: 16px;
   font-style: italic;

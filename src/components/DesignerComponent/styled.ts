@@ -14,5 +14,4 @@ export const WrapperDesigner = styled(Text)`
 `;
 export const TextDesigner = styled(Text)`
   font-size: 26px;
-  font-family: monospace;
 `;

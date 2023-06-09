@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { TitleDescriptionContainer } from "./styled";
-import { TitleDescriptionTitle, TitleDescriptionDescription } from "./styled";
+import { Wrapper } from "./styled";
+import { Title, Description } from "./styled";
 
 type TitleDescriptionProps = {
   title: string;
@@ -13,9 +13,9 @@ export const TitleDescription = ({
   description = "",
 }: TitleDescriptionProps) => {
   return (
-    <TitleDescriptionContainer>
-      <TitleDescriptionTitle>{title}</TitleDescriptionTitle>
-      <TitleDescriptionDescription>{description}</TitleDescriptionDescription>
-    </TitleDescriptionContainer>
+    <Wrapper>
+      <Title>{title}</Title>
+      <Description>{description}</Description>
+    </Wrapper>
   );
 };
