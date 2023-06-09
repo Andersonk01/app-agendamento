@@ -1,16 +1,25 @@
-import { StyleSheet, Text, View, ActivityIndicator, Image } from "react-native";
-import React, { useState } from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ActivityIndicator,
+  Image,
+  Switch,
+} from "react-native";
+import React, { useContext, useState } from "react";
 import * as S from "./styled";
 import * as ImagePicker from "expo-image-picker";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ButtonPlus } from "./components/ButtonPlus/styled";
 import { ButtonGeneric } from "./components/ButtonGeneric";
-import { Profile } from "../../components/Profile";
-// import { setSelectedImageUri } from "./components/SettImage";
 import { TitleDescription } from "./components/TitleDescription";
-import { uploadBytes, ref } from "firebase/storage";
 
-import { Ref } from "react";
+// import { setSelectedImageUri } from "./components/SettImage";
+// import { uploadBytes, ref } from "firebase/storage";
+// import { ButtonTheme } from "../../components/ButtonTheme";
+// import { Ref } from "react";
+
+import { ButtonTheme } from "../../components/ButtonTheme";
 
 export const SettingPage = () => {
   const [image, setImage] = useState<string | null>(null);
@@ -112,6 +121,7 @@ export const SettingPage = () => {
         />
       </View>
       <View style={s.containerBottom}>
+        <ButtonTheme />
         <ButtonGeneric name="Login" />
         <ButtonGeneric name="Senha" />
       </View>
@@ -119,22 +129,23 @@ export const SettingPage = () => {
   );
 };
 
-export const SettingsPage = () => {
-  <S.SettingContainer>
-    <View style={s.containerBottom}>
-      <SettingPage />
-      <TitleDescription
-        title="Anderson Kauer"
-        description="Front End Developer"
-      />
-    </View>
+// export const SettingsPage = () => {
+//   <S.SettingContainer>
+//     <View style={s.containerBottom}>
+//       <SettingPage />
+//       <TitleDescription
+//         title="Anderson Kauer"
+//         description="Front End Developer"
+//       />
+//     </View>
 
-    <View style={s.containerBottom}>
-      <ButtonGeneric name="Login" />
-      <ButtonGeneric name="Senha" />
-    </View>
-  </S.SettingContainer>;
-};
+//     <View style={s.containerBottom}>
+//       {/* <ButtonTheme /> */}
+//       <ButtonGeneric name="Login" />
+//       <ButtonGeneric name="Senha" />
+//     </View>
+//   </S.SettingContainer>;
+// };
 
 const s = StyleSheet.create({
   containerTop: {
